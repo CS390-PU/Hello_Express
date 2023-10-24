@@ -29,11 +29,11 @@ http.createServer(function(request, response) {
     response.write("<table><tr>");
 
     count = 0;
-    powerballs = new Map ();
+    powerballs = new Set ();
     while (count < 5) {
         randomNum = Math.floor (Math.random () * 69) + 1;
         if (!powerballs.has (randomNum)) {
-            powerballs.set (randomNum, true);
+            powerballs.add (randomNum);
             count++;
             response.write("<td>" + randomNum + "</td>");
             console.log(randomNum);
